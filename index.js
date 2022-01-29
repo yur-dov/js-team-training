@@ -28,3 +28,20 @@
 
 // console.log(`${modifHours}:${modifMinuts}`);
 
+//3. Напишите цикл, который выводит в консоль
+//числа от max до min по убыванию
+// Додайте все четные чисела от min до max
+
+const max = 50;
+const min = 23;
+let total = 0;
+for (let i = max; i >= min; i -= 1) {
+    if (i % 2 !== 0) {
+        continue;
+        
+        
+    } total += i;
+    
+    
+} console.log(total);
+
