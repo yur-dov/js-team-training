@@ -214,18 +214,38 @@
 //Лёша на полке клопа нашёл
 //А роза упала на лапу Азора
 
-function isPolindrom(str) {
-  const lower = str.toLowerCase().replaceAll(" ", "");
-  console.log(lower);
-  const array = lower.split("");
-  const reverse = array.reverse().join("");
-  console.log(reverse);
-  if (lower === reverse) {
-    return true;
-  }
-  return false;
+// function isPolindrom(str) {
+//   const lower = str.toLowerCase().replaceAll(" ", "");
+//   console.log(lower);
+//   const array = lower.split("");
+//   const reverse = array.reverse().join("");
+//   console.log(reverse);
+//   if (lower === reverse) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// console.log(isPolindrom("Лёша на полке клопа нашёл"));
+// console.log(isPolindrom("А роза упала на лапу Азора"));
+// console.log(isPolindrom("Мне нужен Артеон"));
+
+//Напиши функцию findSmallerNumber(numbers)
+//которая ищет самое маленькое число в массиве
+//Добавь проверку что функция получает массив
+//const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
+
+function findSmallerNumber(numbers) {
+    let minElement = numbers[0];
+    if (!Array.isArray(numbers)) {
+        console.log("Не массив");
+    return};  
+    for (let number of numbers) { 
+        if (number < minElement) { minElement = number }
+            }
+    console.log(minElement);
+    
 }
 
-console.log(isPolindrom("Лёша на полке клопа нашёл"));
-console.log(isPolindrom("А роза упала на лапу Азора"));
-console.log(isPolindrom("Мне нужен Артеон"));
+findSmallerNumber([2, 5, 35, 56, 12, 24, 7, 80, 3])
+findSmallerNumber("dfhxfdggkfghk")
