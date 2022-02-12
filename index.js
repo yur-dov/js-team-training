@@ -150,17 +150,38 @@
 //Цикл должет спрашивать число, пока посетитель не
 //введёт число больше 100, либо не нажмет кнопку
 //Отмена в prompt
-let check = false;
-let userInput = prompt("Введіть число більше 100");
-// while (userInput <= 100){
-//     userInput = prompt("Введіть число більше 100");
-// }
-do{
-    if(userInput <= 100){
-        check = true;
-        userInput = prompt("Введіть число більше 100");
-    }else{
-        check=false;
-    }
-}while (check);
-console.log(`ви ввели ${userInput}`)
+// let check = false;
+// let userInput = prompt("Введіть число більше 100");
+// // while (userInput <= 100){
+// //     userInput = prompt("Введіть число більше 100");
+// // }
+// do{
+//     if(userInput <= 100){
+//         check = true;
+//         userInput = prompt("Введіть число більше 100");
+//     }else{
+//         check=false;
+//     }
+// }while (check);
+// console.log(`ви ввели ${userInput}`)
+
+
+//Создайте массив styles с элементами «Джаз» и «Блюз».
+//Добавьте «Рок-н-ролл» в конец.
+//Замените значение «Блюз» на «Классика».
+//Удалите первый элемент массива и выведите его в консоль.
+//Вставьте «Рэп» и «Регги» в начало массива.
+
+
+const styles = ['Джаз', 'Блюз'];
+console.log(styles);
+// styles.push('Рок-н-ролл');
+console.log(styles.push('Рок-н-ролл'));
+console.log(styles);
+styles.splice(1,1, 'Классика');
+console.log(styles);
+console.log(styles.shift());
+console.log(styles);
+styles.unshift('Рэп', 'Регги');
+console.log(styles);
+
