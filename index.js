@@ -177,17 +177,35 @@
 //меньшее из чисел a, b
 //нужно добавить проверку, что функция получает числа
 
-function min(a, b) {
-  if (typeof a !== "number" || typeof b !== "number") {
-    console.log("Не число");
-    console.log(typeof a);
-    console.log(typeof b);
-    return;
-  }
-  if (a < b) {
-    return a;
-  }
-  return b;
-}
+// function min(a, b) {
+//   if (typeof a !== "number" || typeof b !== "number") {
+//     console.log("Не число");
+//     console.log(typeof a);
+//     console.log(typeof b);
+//     return;
+//   }
+//   if (a < b) {
+//     return a;
+//   }
+//   return b;
+// }
 
-console.log(min(5, false));
+// console.log(min(5, false));
+// /Напишите функцию logItems(array) которая принимает
+//массив и использует цикл for, который для каждого
+//элемента массива будет выводить сообщение в формате
+//<номер элемента> - <значение элемента>
+//Нумерация элементов должна начинаться с 1.
+const array = [{name: 'Джаз', engl: "jazz", number: 1}, {name: 'Блюз', engl: "blues", number: 2}, {name: 'Рок-н-ролл', engl: "rock 'n' roll ", number: 3}, {name: 'Регги', engl: "reggae", number: 4}, {name: 'Рэп', engl: "rap", number: 5}]
+
+function logItems(array) {
+    let count = 0;
+    for(const cislovodsk of array){
+    
+        console.log(`номер ${cislovodsk.number} name ${cislovodsk.name} знач ${cislovodsk.engl}.`  );
+        // console.log(cislovodsk.engl);
+        // console.log(cislovodsk.number);
+    }
+
+}
+logItems(array)
