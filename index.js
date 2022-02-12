@@ -235,17 +235,130 @@
 //Добавь проверку что функция получает массив
 //const numbers = [2, 5, 35, 56, 12, 24, 7, 80, 3];
 
-function findSmallerNumber(numbers) {
-    let minElement = numbers[0];
-    if (!Array.isArray(numbers)) {
-        console.log("Не массив");
-    return};  
-    for (let number of numbers) { 
-        if (number < minElement) { minElement = number }
-            }
-    console.log(minElement);
+// function findSmallerNumber(numbers) {
+//     let minElement = numbers[0];
+//     if (!Array.isArray(numbers)) {
+//         console.log("Не массив");
+//     return};
+//     for (let number of numbers) {
+//         if (number < minElement) { minElement = number }
+//             }
+//     console.log(minElement);
     
+// }
+
+// findSmallerNumber([2, 5, 35, 56, 12, 24, 7, 80, 3])
+// findSmallerNumber("dfhxfdggkfghk");
+
+
+
+const people = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+// нарцис  'Jhon'
+
+const people1 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: [],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса'
+
+const people2 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Eva'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса
+
+const people3 = [
+  {
+    name: 'Alex',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: ['Eva'],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Eva'],
+  },
+];
+//немає нарциса'
+
+function narcissus(people) {
+   
+    for (const proletar of people) {
+       
+        if (proletar.know.length === 0) {
+            console.log(proletar.name);
+           return  narcissusName(proletar.name, people);
+            
+        }
+    }
+    console.log('Нарциса не найдено');
+}
+narcissus(people);
+narcissus(people1);
+narcissus(people2);
+narcissus(people3);
+function narcissusName(narcissus, people) {
+    for (const proletar of people) {
+        if (proletar.name === narcissus) {
+            continue;
+        }
+        if (!proletar.know.includes(narcissus)) {
+           return console.log(`нарциса не найдено`)
+        }
+
+    }
+    console.log(`${narcissus} - нарциз`);
 }
 
-findSmallerNumber([2, 5, 35, 56, 12, 24, 7, 80, 3])
-findSmallerNumber("dfhxfdggkfghk")
+
