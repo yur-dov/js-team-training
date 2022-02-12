@@ -196,16 +196,36 @@
 //элемента массива будет выводить сообщение в формате
 //<номер элемента> - <значение элемента>
 //Нумерация элементов должна начинаться с 1.
-const array = [{name: 'Джаз', engl: "jazz", number: 1}, {name: 'Блюз', engl: "blues", number: 2}, {name: 'Рок-н-ролл', engl: "rock 'n' roll ", number: 3}, {name: 'Регги', engl: "reggae", number: 4}, {name: 'Рэп', engl: "rap", number: 5}]
+// const array = [{name: 'Джаз', engl: "jazz", number: 1}, {name: 'Блюз', engl: "blues", number: 2}, {name: 'Рок-н-ролл', engl: "rock 'n' roll ", number: 3}, {name: 'Регги', engl: "reggae", number: 4}, {name: 'Рэп', engl: "rap", number: 5}]
 
-function logItems(array) {
-    let count = 0;
-    for(const cislovodsk of array){
-    
-        console.log(`номер ${cislovodsk.number} name ${cislovodsk.name} знач ${cislovodsk.engl}.`  );
-        // console.log(cislovodsk.engl);
-        // console.log(cislovodsk.number);
-    }
+// function logItems(array) {
+//     let count = 0;
+//     for(const cislovodsk of array){
 
+//         console.log(`номер ${cislovodsk.number} name ${cislovodsk.name} знач ${cislovodsk.engl}.`  );
+//         // console.log(cislovodsk.engl);
+//         // console.log(cislovodsk.number);
+//     }
+
+// }
+// logItems(array)
+
+//Проверка на палиндром
+//Лёша на полке клопа нашёл
+//А роза упала на лапу Азора
+
+function isPolindrom(str) {
+  const lower = str.toLowerCase().replaceAll(" ", "");
+  console.log(lower);
+  const array = lower.split("");
+  const reverse = array.reverse().join("");
+  console.log(reverse);
+  if (lower === reverse) {
+    return true;
+  }
+  return false;
 }
-logItems(array)
+
+console.log(isPolindrom("Лёша на полке клопа нашёл"));
+console.log(isPolindrom("А роза упала на лапу Азора"));
+console.log(isPolindrom("Мне нужен Артеон"));
