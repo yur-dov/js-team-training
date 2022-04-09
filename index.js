@@ -252,113 +252,114 @@
 
 
 
-const people = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-// нарцис  'Jhon'
+// const people = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },{
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// // нарцис  'Jhon'
 
-const people1 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: [],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса'
+// const people1 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: [],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса'
 
-const people2 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Eva'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса
+// const people2 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Eva'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса
 
-const people3 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: ['Eva'],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса'
+// const people3 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: ['Eva'],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса'
 
-function narcissus(people) {
+// function narcissus(people) {
    
-    for (const proletar of people) {
-       
-        if (proletar.know.length === 0) {
-            console.log(proletar.name);
-           return  narcissusName(proletar.name, people);
+//     for (const proletar of people) {
+//       //  console.log(proletar.know);
+//         if (proletar.know.length === 0) {
+//             // console.log(proletar.name);
+//            return  narcissusName(proletar.name, people);
             
-        }
-    }
-    console.log('Нарциса не найдено');
-}
-narcissus(people);
-narcissus(people1);
-narcissus(people2);
-narcissus(people3);
-function narcissusName(narcissus, people) {
-    for (const proletar of people) {
-        if (proletar.name === narcissus) {
-            continue;
-        }
-        if (!proletar.know.includes(narcissus)) {
-           return console.log(`нарциса не найдено`)
-        }
+//         }
+//     }
+//     console.log('Нарциса не найдено');
+// }
+// // narcissus(people); 
+// // narcissus(people1);
+// // narcissus(people2);
+// narcissus(people3);
+// function narcissusName(narcissus, people) {
 
-    }
-    console.log(`${narcissus} - нарциз`);
-}
+//     // console.log(narcissus);
+//     for (const proletar of people) {
+//         console.log(proletar);
+//         if (proletar.name === narcissus) {
+//             continue;
+//         }
+//         if (!proletar.know.includes(narcissus)) {
+//            return console.log(`нарциса не найдено`)
+//         }
 
+//     }
+//     console.log(`${narcissus} - нарциз`);
+// }
 
