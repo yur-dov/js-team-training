@@ -244,121 +244,158 @@
 //         if (number < minElement) { minElement = number }
 //             }
 //     console.log(minElement);
-    
+
 // }
 
 // findSmallerNumber([2, 5, 35, 56, 12, 24, 7, 80, 3])
 // findSmallerNumber("dfhxfdggkfghk");
 
+// const people = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// // нарцис  'Jhon'
 
+// const people1 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: [],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса'
 
-const people = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-// нарцис  'Jhon'
-
-const people1 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: [],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса'
-
-const people2 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Eva'],
-  },
-  {
-    name: 'Jhon',
-    know: [],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
+// const people2 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Eva'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: [],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
 //немає нарциса
 
-const people3 = [
-  {
-    name: 'Alex',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Jhon',
-    know: ['Eva'],
-  },
-  {
-    name: 'Eva',
-    know: ['Alex', 'Jhon'],
-  },
-  {
-    name: 'Ivan',
-    know: ['Jhon', 'Eva'],
-  },
-];
-//немає нарциса'
+// const people3 = [
+//   {
+//     name: 'Alex',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Jhon',
+//     know: ['Eva'],
+//   },
+//   {
+//     name: 'Eva',
+//     know: ['Alex', 'Jhon'],
+//   },
+//   {
+//     name: 'Ivan',
+//     know: ['Jhon', 'Eva'],
+//   },
+// ];
+// //немає нарциса'
 
-function narcissus(people) {
-   
-    for (const proletar of people) {
-       
-        if (proletar.know.length === 0) {
-            console.log(proletar.name);
-           return  narcissusName(proletar.name, people);
-            
-        }
-    }
-    console.log('Нарциса не найдено');
-}
-narcissus(people);
-narcissus(people1);
-narcissus(people2);
-narcissus(people3);
-function narcissusName(narcissus, people) {
-    for (const proletar of people) {
-        if (proletar.name === narcissus) {
-            continue;
-        }
-        if (!proletar.know.includes(narcissus)) {
-           return console.log(`нарциса не найдено`)
-        }
+// function narcissus(people) {
 
-    }
-    console.log(`${narcissus} - нарциз`);
-}
+//     for (const proletar of people) {
 
+//         if (proletar.know.length === 0) {
+//             console.log(proletar.name);
+//            return  narcissusName(proletar.name, people);
 
+//         }
+//     }
+//     console.log('Нарциса не найдено');
+// }
+// narcissus(people);
+// narcissus(people1);
+// narcissus(people2);
+// narcissus(people3);
+// function narcissusName(narcissus, people) {
+//     for (const proletar of people) {
+//         if (proletar.name === narcissus) {
+//             continue;
+//         }
+//         if (!proletar.know.includes(narcissus)) {
+//            return console.log(`нарциса не найдено`)
+//         }
+
+//     }
+//     console.log(`${narcissus} - нарциз`);
+// }
+
+// =======task1
+//Напиши функцию конструктор User для создания пользователя со следующими свойствами
+//a. userName - имя, строка
+//b. age - возраст, число
+//c. numbersOfPost - количество постов, число
+//d. класс ожидает 1 параметр - объект настроек с одноименными свойствами
+//Добавь метод getInfo(), который возвращает строку:
+//`Пользователю ${} ${} лет и у него ${} публикаций.`
+
+// class User {
+//   constructor({ name, age, post }) {
+//     this.name = name;
+//     this.age = age;
+//     this.numbersOfPost = post;
+//   }
+// }
+
+const User = function ({ name, age, post, sex }) {
+  this.name = name;
+  this.age = age;
+  this.post = post;
+  this.sex = sex;
+};
+
+User.prototype.getInfo = function () {
+  console.log(
+    `Користувачу ${this.name} ${this.age} років і в ${
+      this.sex === 'male' ? 'нього' : 'неї'
+    } ${this.post} публікацій.`
+  );
+};
+const ivika = new User({ name: 'Ivika', age: 25, post: 250, sex: 'female' });
+ivika.getInfo();
+const myroslav = new User({
+  name: 'Myroslav',
+  age: 18,
+  post: 240,
+  sex: 'male',
+});
+myroslav.getInfo();
