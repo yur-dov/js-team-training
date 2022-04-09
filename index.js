@@ -410,35 +410,66 @@
 //addItems(item) - получает новый товар и добавляет его к текущим
 //removeItem(item) - плучает товар и, если он есть, удаляет его из текущих
 
-const Storage = function (items)  {
+// const Storage = function (items)  {
      
-        this._items = items;
+//         this._items = items;
 
-        this.getItems =  function() {
-            return this._items
-        };
+//         this.getItems =  function() {
+//             return this._items
+//         };
 
 
 
+// }
+
+//     // Storage.prototype.getItems = function() {
+//     //     return this._items
+//     // }
+
+//     Storage.prototype.addItems = function(item) {
+//         this._items.push(item)
+//     }
+
+//     Storage.prototype.removeItem = function(item){
+//            this._items = this._items.filter(element => element !== item)
+//     }
+
+
+// const array = new Storage (['q', 'w', 'e', 'r'])
+// console.log(array);
+// array.addItems('y');
+// array.removeItem('y');
+// // console.log(array.getItems());
+
+// console.dir(array);
+
+
+// //task3
+// Напиши класс Client котрорый создает объект
+// //со свойствами login email
+// //Объяви приватные свойства #login #email,
+// //доступ к которым сделай через геттер и сеттер login email
+
+
+class Clients {
+    #login;
+    #email;
+    constructor({login, email}){
+        this.#login = login;
+        this.#email = email;
+    }
+
+    get userInfo (){
+        return {login:this.#login, email:this.#email};
+    }
+
+    set userInfo ({newLogin, newEmail}){
+        this.#login = newLogin;
+        this.#email = newEmail;
+    }
 }
 
-    // Storage.prototype.getItems = function() {
-    //     return this._items
-    // }
-
-    Storage.prototype.addItems = function(item) {
-        this._items.push(item)
-    }
-
-    Storage.prototype.removeItem = function(item){
-           this._items = this._items.filter(element => element !== item)
-    }
-
-
-const array = new Storage (['q', 'w', 'e', 'r'])
-console.log(array);
-array.addItems('y');
-array.removeItem('y');
-// console.log(array.getItems());
-
-console.dir(array);
+const bobby = new Clients({login: 'abc', email: 'bobby@gmail.com'});
+console.log(bobby);
+bobby.userInfo = {newLogin: 'def', newEmail: 'bob@gmail.com'};
+console.log(bobby.userInfo);
