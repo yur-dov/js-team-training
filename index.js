@@ -400,7 +400,6 @@
 // });
 // myroslav.getInfo();
 
-
 //2. Напиши функцию конструктор Storage который создаёт объкты
 //для управления складом товаров.
 //При вызове будет получать один агрумент - начальный массив товаров,
@@ -411,14 +410,12 @@
 //removeItem(item) - плучает товар и, если он есть, удаляет его из текущих
 
 // const Storage = function (items)  {
-     
+
 //         this._items = items;
 
 //         this.getItems =  function() {
 //             return this._items
 //         };
-
-
 
 // }
 
@@ -434,7 +431,6 @@
 //            this._items = this._items.filter(element => element !== item)
 //     }
 
-
 // const array = new Storage (['q', 'w', 'e', 'r'])
 // console.log(array);
 // array.addItems('y');
@@ -443,12 +439,19 @@
 
 // console.dir(array);
 
-
 // //task3
 // Напиши класс Client котрорый создает объект
 // //со свойствами login email
 // //Объяви приватные свойства #login #email,
 // //доступ к которым сделай через геттер и сеттер login email
+
+// class Clients {
+//     #login;
+//     #email;
+//     constructor({login, email}){
+//         this.#login = login;
+//         this.#email = email;
+//     }
 
 
 // class Clients {
@@ -555,3 +558,4 @@ const getAvailableCarNames = (cars, amountThreshold) => {
 }
 
 console.log(getAvailableCarNames(vehicles, 12));
+
