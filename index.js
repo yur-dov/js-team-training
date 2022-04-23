@@ -451,30 +451,18 @@
 // //доступ к которым сделай через геттер и сеттер login email
 
 
-class Clients {
-    #login;
-    #email;
-    constructor({login, email}){
-        this.#login = login;
-        this.#email = email;
-    }
+// class Clients {
+//     #login;
+//     #email;
+//     constructor({login, email}){
+//         this.#login = login;
+//         this.#email = email;
+//     }
 
-    get userInfo (){
-        return {login:this.#login, email:this.#email};
-    }
+//     get userInfo (){
+//         return {login:this.#login, email:this.#email};
+//     }
 
-<<<<<<< Updated upstream
-    set userInfo ({newLogin, newEmail}){
-        this.#login = newLogin;
-        this.#email = newEmail;
-    }
-}
-
-const bobby = new Clients({login: 'abc', email: 'bobby@gmail.com'});
-console.log(bobby);
-bobby.userInfo = {newLogin: 'def', newEmail: 'bob@gmail.com'};
-console.log(bobby.userInfo);
-=======
 // const bobby = new Clients({login: 'abc', email: 'bobby@gmail.com'});
 // console.log(bobby);
 // bobby.userInfo = {newLogin: 'def', newEmail: 'bob@gmail.com'};
@@ -523,4 +511,47 @@ console.log(bobby.userInfo);
 //   { text: "hjklk", priority: Notes.PRIORITY().HIGHT }
 // );
 // newNote.updatePriority("qwer", Notes.PRIORITY().HIGHT);
->>>>>>> Stashed changes
+
+
+// // СОРТ ЭЛЕМЕНТОВ БЕЗ МЕТИОД МАССИВА
+// let a=[7,7,7,5,5,5];
+// for(let i=0; i<a.length/2;i+=1){
+//   console.log("a[i])", a[i]);
+//   console.log("a[a.length-1-i])", a[a.length-1-i]);
+//   let template = a[i];
+//   a[i]=a[a.length-1-i]
+//   a[a.length-1-i]= template;
+// }
+// console.log(a);
+
+
+
+const vehicles = [
+  { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
+  { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
+  { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
+  { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
+  { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
+  { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
+  { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
+  { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
+  { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
+  { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false },
+];
+
+
+// const getAvailableCarNames = (cars, amountThreshold) => cars.filter(car=>car.amount > amountThreshold)
+// .map(car=>car.model);
+// ВЕРНУТЬ НАЗВНИЕ МОДЕЛЕЙ, АМОУНТ КОТОРЫХ БОЛЬШЕ amountThreshold
+
+const getAvailableCarNames = (cars, amountThreshold) => {
+  return cars.reduce((acc , car) =>{
+    if (car.amount > amountThreshold){
+      //// acc.push(car.model)
+      return [...acc, car.model];
+    }
+    return acc;
+  },[])
+}
+
+console.log(getAvailableCarNames(vehicles, 12));
