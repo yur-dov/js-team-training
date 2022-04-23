@@ -517,19 +517,40 @@
 
 // 1.
 
-const isEqualSymbols = function (string1, string2) {
-  const string1ToArray = string1.split("");
-  const string2ToArray = string2.split("");
-  console.log(string1ToArray);
-  if (string1ToArray.length !== string2ToArray.length) {
-    return false;
+// const isEqualSymbols = function (string1, string2) {
+//   const string1ToArray = string1.split("");
+//   const string2ToArray = string2.split("");
+//   console.log(string1ToArray);
+//   if (string1ToArray.length !== string2ToArray.length) {
+//     return false;
+//   }
+//   for (let i = 0; i < string1ToArray.length; i += 1) {
+//     if (!string1ToArray.includes(string2ToArray[i])) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(isEqualSymbols("кот", "ток")); // выведет true
+// console.log(isEqualSymbols("кот", "тик")); // выведет false
+
+const monitors = ['SAMSUNG', 'LG', 'ASUS', 'DELL', 'BENQ', 'ASER'];
+
+const sortedMonitors = [...monitors].sort((a, b) => {
+  if (a < b) {
+    return 1
   }
-  for (let i = 0; i < string1ToArray.length; i += 1) {
-    if (!string1ToArray.includes(string2ToArray[i])) {
-      return false;
-    }
+  if (a > b) {
+    return -1
   }
-  return true;
-};
-console.log(isEqualSymbols("кот", "ток")); // выведет true
-console.log(isEqualSymbols("кот", "тик")); // выведет false
+  return 0
+})
+console.log(sortedMonitors);
+
+console.log(monitors.sort());
+
+
+
+
+
+
