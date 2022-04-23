@@ -453,7 +453,6 @@
 //         this.#email = email;
 //     }
 
-
 // class Clients {
 //     #login;
 //     #email;
@@ -466,9 +465,6 @@
 //         return {login:this.#login, email:this.#email};
 //     }
 
-
-
-
 // // СОРТ ЭЛЕМЕНТОВ БЕЗ МЕТИОД МАССИВА
 // let a=[7,7,7,5,5,5];
 // for(let i=0; i<a.length/2;i+=1){
@@ -480,40 +476,60 @@
 // }
 // console.log(a);
 
+// const vehicles = [
+//   { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
+//   { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
+//   { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
+//   { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
+//   { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
+//   { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
+//   { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
+//   { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
+//   { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
+//   { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false },
+// ];
 
+// // const getAvailableCarNames = (cars, amountThreshold) => cars.filter(car=>car.amount > amountThreshold)
+// // .map(car=>car.model);
+// // ВЕРНУТЬ НАЗВНИЕ МОДЕЛЕЙ, АМОУНТ КОТОРЫХ БОЛЬШЕ amountThreshold
 
-const vehicles = [
-  { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
-  { make: 'Honda', model: 'Accord', type: 'sedan', amount: 2, price: 22455, onSale: true },
-  { make: 'Mazda', model: 'Mazda 6', type: 'sedan', amount: 8, price: 24195, onSale: false },
-  { make: 'Mazda', model: 'CX-9', type: 'suv', amount: 7, price: 31520, onSale: true },
-  { make: 'Toyota', model: '4Runner', type: 'suv', amount: 19, price: 34210, onSale: false },
-  { make: 'Toyota', model: 'Sequoia', type: 'suv', amount: 16, price: 45560, onSale: false },
-  { make: 'Toyota', model: 'Tacoma', type: 'truck', amount: 4, price: 24320, onSale: true },
-  { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
-  { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
-  { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false },
-];
+// const getAvailableCarNames = (cars, amountThreshold) => {
+//   return cars.reduce((acc , car) =>{
+//     if (car.amount > amountThreshold){
+//       //// acc.push(car.model)
+//       return [...acc, car.model];
+//     }
+//     return acc;
+//   },[])
+// }
 
+// console.log(getAvailableCarNames(vehicles, 12));
 
-// const getAvailableCarNames = (cars, amountThreshold) => cars.filter(car=>car.amount > amountThreshold)
-// .map(car=>car.model);
-// ВЕРНУТЬ НАЗВНИЕ МОДЕЛЕЙ, АМОУНТ КОТОРЫХ БОЛЬШЕ amountThreshold
+// const sortedCars = function (array, price) {
+//     return array.filter((car) => car.onSale && car.price > price).sort((a, b) => b.price - a.price)
 
-const getAvailableCarNames = (cars, amountThreshold) => {
-  return cars.reduce((acc , car) =>{
-    if (car.amount > amountThreshold){
-      //// acc.push(car.model)
-      return [...acc, car.model];
+// }
+// console.table(sortedCars(vehicles, 23000));
+
+//Необходимо написать функцию (isEqualSymbols), принимающую
+//в аргументах две строки и возвращающую true, если эти строки
+//состоят из идентичных букв и false в противном случае.
+
+// 1.
+
+const isEqualSymbols = function (string1, string2) {
+  const string1ToArray = string1.split("");
+  const string2ToArray = string2.split("");
+  console.log(string1ToArray);
+  if (string1ToArray.length !== string2ToArray.length) {
+    return false;
+  }
+  for (let i = 0; i < string1ToArray.length; i += 1) {
+    if (!string1ToArray.includes(string2ToArray[i])) {
+      return false;
     }
-    return acc;
-  },[])
-}
-
-console.log(getAvailableCarNames(vehicles, 12));
-
-const sortedCars = function (array, price) {
-    return array.filter((car) => car.onSale && car.price > price).sort((a, b) => b.price - a.price) 
-    
-}
-console.table(sortedCars(vehicles, 23000));
+  }
+  return true;
+};
+console.log(isEqualSymbols("кот", "ток")); // выведет true
+console.log(isEqualSymbols("кот", "тик")); // выведет false
