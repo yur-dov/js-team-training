@@ -400,7 +400,6 @@
 // });
 // myroslav.getInfo();
 
-
 //2. Напиши функцию конструктор Storage который создаёт объкты
 //для управления складом товаров.
 //При вызове будет получать один агрумент - начальный массив товаров,
@@ -411,14 +410,12 @@
 //removeItem(item) - плучает товар и, если он есть, удаляет его из текущих
 
 // const Storage = function (items)  {
-     
+
 //         this._items = items;
 
 //         this.getItems =  function() {
 //             return this._items
 //         };
-
-
 
 // }
 
@@ -434,7 +431,6 @@
 //            this._items = this._items.filter(element => element !== item)
 //     }
 
-
 // const array = new Storage (['q', 'w', 'e', 'r'])
 // console.log(array);
 // array.addItems('y');
@@ -443,12 +439,19 @@
 
 // console.dir(array);
 
-
 // //task3
 // Напиши класс Client котрорый создает объект
 // //со свойствами login email
 // //Объяви приватные свойства #login #email,
 // //доступ к которым сделай через геттер и сеттер login email
+
+// class Clients {
+//     #login;
+//     #email;
+//     constructor({login, email}){
+//         this.#login = login;
+//         this.#email = email;
+//     }
 
 
 // class Clients {
@@ -463,16 +466,21 @@
 //         return {login:this.#login, email:this.#email};
 //     }
 
-//     set userInfo ({newLogin, newEmail}){
-//         this.#login = newLogin;
-//         this.#email = newEmail;
-//     }
-// }
 
-// const bobby = new Clients({login: 'abc', email: 'bobby@gmail.com'});
-// console.log(bobby);
-// bobby.userInfo = {newLogin: 'def', newEmail: 'bob@gmail.com'};
-// console.log(bobby.userInfo);
+
+
+// // СОРТ ЭЛЕМЕНТОВ БЕЗ МЕТИОД МАССИВА
+// let a=[7,7,7,5,5,5];
+// for(let i=0; i<a.length/2;i+=1){
+//   console.log("a[i])", a[i]);
+//   console.log("a[a.length-1-i])", a[a.length-1-i]);
+//   let template = a[i];
+//   a[i]=a[a.length-1-i]
+//   a[a.length-1-i]= template;
+// }
+// console.log(a);
+
+
 
 const vehicles = [
   { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
@@ -486,6 +494,23 @@ const vehicles = [
   { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
   { make: 'Ford', model: 'Explorer', type: 'suv', amount: 6, price: 31660, onSale: false },
 ];
+
+
+// const getAvailableCarNames = (cars, amountThreshold) => cars.filter(car=>car.amount > amountThreshold)
+// .map(car=>car.model);
+// ВЕРНУТЬ НАЗВНИЕ МОДЕЛЕЙ, АМОУНТ КОТОРЫХ БОЛЬШЕ amountThreshold
+
+const getAvailableCarNames = (cars, amountThreshold) => {
+  return cars.reduce((acc , car) =>{
+    if (car.amount > amountThreshold){
+      //// acc.push(car.model)
+      return [...acc, car.model];
+    }
+    return acc;
+  },[])
+}
+
+console.log(getAvailableCarNames(vehicles, 12));
 
 const sortedCars = function (array, price) {
     return array.filter((car) => car.onSale && car.price > price).sort((a, b) => b.price - a.price) 
